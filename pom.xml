@@ -65,12 +65,12 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <browser>
-                            ${browser}
-                        </browser>
-                    </systemPropertyVariables>
+<!--                    <systemPropertyVariables>-->
+<!--                        &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
+<!--                        <browser>-->
+<!--                            ${browser}-->
+<!--                        </browser>-->
+<!--                    </systemPropertyVariables>-->
                 </configuration>
             </plugin>
         </plugins>
