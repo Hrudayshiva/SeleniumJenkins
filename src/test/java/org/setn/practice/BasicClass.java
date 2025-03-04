@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +35,7 @@ public class BasicClass {
     public static JavascriptExecutor jsExecutor;
     public static FluentWait wait1;
     public final int TIMEOUT = 40;
+    public static ChromeOptions chromeOptions;
 
     @BeforeMethod
     @Parameters({"browser", "url1"})
@@ -42,6 +44,9 @@ public class BasicClass {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
+                chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--disable-gpu");
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
