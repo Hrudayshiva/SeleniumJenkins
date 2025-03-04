@@ -5,6 +5,7 @@
         <listener class-name="org.setn.practice.Listeners"/>
     </listeners>
     <test name="practice test" parallel="false" thread-count="4">
+        <parameter name="browser" value="chrome"/>
         <parameter name="url1" value="https://www.automationtesting.co.uk/index.html"/>
         <parameter name="url2" value="https://www.hyrtutorials.com/p/frames-practice.html"/>
         <classes>
