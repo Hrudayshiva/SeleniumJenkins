@@ -1,8 +1,14 @@
-package org.setn.practice;
+package org.setn.TestClasses;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.google.gson.JsonObject;
+import org.json.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.setn.DataUtil.ExcelHandle;
+import org.setn.DataUtil.JSONUtil;
+import org.setn.MainClass.BasicClass;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,6 +29,8 @@ public class ActionsClass extends BasicClass {
     private String button_ClickArea = "(//div[@id='doubleClickArea'])[2]";
     private String link_Animals = "//a[contains(text(), 'Animals')]";
     private String link_Mouse = "//a[contains(text(), 'Mouse')]";
+
+    JSONObject jsonObject = new JSONObject(JSONUtil.jsonConverter());
 
     //Constructor
     public ActionsClass() {
@@ -47,7 +55,7 @@ public class ActionsClass extends BasicClass {
         dragAndDrop(button_DragMe, area_DropTarget);
         waitUntilElementVisible(text_DragDrop);
         String text = getText(text_DragDrop);
-        Assert.assertEquals(text, ExcelHandle.getExcelData(0, 0));
+        Assert.assertEquals(text, jsonObject.getJSONObject("actions").getString("draganddropmessage"));
     }
 
     @Test(priority = 2)

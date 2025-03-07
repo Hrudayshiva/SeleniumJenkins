@@ -52,6 +52,12 @@
             <artifactId>slf4j</artifactId>
             <version>1.2.2.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -65,20 +71,20 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-<!--                    <systemPropertyVariables>-->
-<!--                        &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-<!--                        <browser>-->
-<!--                            ${browser}-->
-<!--                        </browser>-->
-<!--                    </systemPropertyVariables>-->
+                    <systemPropertyVariables>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <browser>
+                            ${browser}
+                        </browser>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

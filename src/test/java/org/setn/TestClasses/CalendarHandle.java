@@ -1,17 +1,14 @@
-package org.setn.practice;
+package org.setn.TestClasses;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.FluentWait;
+import org.setn.MainClass.BasicClass;
 import org.testng.annotations.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.Calendar;
-import java.util.NoSuchElementException;
 
 public class CalendarHandle extends BasicClass {
 

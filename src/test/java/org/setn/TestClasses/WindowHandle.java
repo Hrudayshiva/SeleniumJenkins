@@ -1,7 +1,7 @@
-package org.setn.practice;
+package org.setn.TestClasses;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
+import org.setn.MainClass.BasicClass;
 import org.testng.annotations.Test;
 
 public class WindowHandle extends BasicClass {

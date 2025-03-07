@@ -1,4 +1,4 @@
-package org.setn.practice;
+package org.setn.MainClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -6,7 +6,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -16,14 +18,11 @@ import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class BasicClass {
 
@@ -36,6 +35,8 @@ public class BasicClass {
     public static FluentWait wait1;
     public final int TIMEOUT = 40;
     public static ChromeOptions chromeOptions;
+    public static FirefoxOptions firefoxOptions;
+    public static EdgeOptions edgeOptions;
 
     @BeforeMethod
     @Parameters({"browser", "url1"})
@@ -50,11 +51,17 @@ public class BasicClass {
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
+                firefoxOptions = new FirefoxOptions();
+//                firefoxOptions.addArguments("--headless");
+//                firefoxOptions.addArguments("--disable-gpu");
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
+                edgeOptions = new EdgeOptions();
+//                edgeOptions.addArguments("--headless=new");
+//                edgeOptions.addArguments("--disable-gpu");
+                driver = new EdgeDriver(edgeOptions);
                 break;
             default:
                 System.err.println("Enter valid browser name");

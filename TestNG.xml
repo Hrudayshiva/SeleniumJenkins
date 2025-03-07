@@ -2,15 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Practices">
     <listeners>
-        <listener class-name="org.setn.practice.Listeners"/>
+        <listener class-name="org.setn.ListenerClass.Listeners"/>
     </listeners>
     <test name="practice test" parallel="false" thread-count="4">
-        <parameter name="browser" value="chrome"/>
+<!--        <parameter name="browser" value="chrome"/>-->
         <parameter name="url1" value="https://www.automationtesting.co.uk/index.html"/>
         <parameter name="url2" value="https://www.hyrtutorials.com/p/frames-practice.html"/>
         <classes>
-            <class name="org.setn.practice.BasicClass"/>
-            <class name="org.setn.practice.SelectClass"/>
+            <class name="org.setn.TestClasses.ActionsClass"/>
         </classes>
     </test>
 </suite>

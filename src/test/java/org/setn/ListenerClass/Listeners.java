@@ -1,5 +1,6 @@
-package org.setn.practice;
+package org.setn.ListenerClass;
 
+import org.setn.MainClass.BasicClass;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
