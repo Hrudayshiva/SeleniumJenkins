@@ -10,6 +10,8 @@
         <parameter name="url2" value="https://www.hyrtutorials.com/p/frames-practice.html"/>
         <classes>
             <class name="org.setn.TestClasses.ActionsClass"/>
+            <class name="org.setn.TestClasses.SelectClass"/>
+            <class name="org.setn.TestClasses.CalendarHandle"/>
         </classes>
     </test>
 </suite>
