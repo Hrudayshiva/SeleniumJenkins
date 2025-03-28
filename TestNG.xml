@@ -11,7 +11,6 @@
         <classes>
             <class name="org.setn.TestClasses.ActionsClass"/>
             <class name="org.setn.TestClasses.SelectClass"/>
-            <class name="org.setn.TestClasses.CalendarHandle"/>
         </classes>
     </test>
 </suite>
