@@ -2,34 +2,34 @@ pipeline {
     agent any
 
     stages {
-	    stage('Checkout') {
+        stage("Navigate to repo") {
             steps {
-                checkout scm
+                bat "cd /d D:IJ//SeleniumTestNGPractice//SeTnPractice"
             }
         }
-        stage('Build') {
+        stage("Clean target folder") {
             steps {
-                echo 'Build app'
+                bat "C://ProgramData//chocolatey//lib//maven//apache-maven-3.9.9//bin//mvn clean"
             }
         }
-        stage('Test') {
+
+        stage("Run tests") {
             steps {
-                echo 'Test app'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploy app'
+                bat "C://ProgramData//chocolatey//lib//maven//apache-maven-3.9.9//bin//mvn test -Dbrowser=chrome"
             }
         }
     }
-	post {
-		success {
-			emailext body: '', subject: 'Pipeline success', to: 'hrudayshiva97@gmail.com'
-		}
-		failure {
-			emailext body: '', subject: 'Pipeline failure', to: 'hrudayshiva97@gmail.com'
-		}
-	
-	}
+
+    post {
+        always {
+            mail to: 'slimshadyy62@gmail.com'
+            subject: "Execution status of ${env.$PROJECT_NAME}"
+            body: """
+
+                This is the build status
+                ${BUILD_NUMBER} >> ${env.$BUILD_STATUS}
+
+                """
+        }
+    }
 }
