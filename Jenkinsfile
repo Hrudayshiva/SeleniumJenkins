@@ -15,13 +15,11 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            emailext (
-                subject: 'Build Info',
-                body: '',
-                to: 'slimshadyy62@gmail.com'
-            )
-        }
+  post {
+    always {
+        mail to: 'slimshadyy62@gmail.com',
+             subject: "Simpler Test from Jenkins",
+             body: "This is a test email from Jenkins"
     }
+}
 }
