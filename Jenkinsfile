@@ -22,9 +22,11 @@ pipeline {
 
     post {
         always {
-           emailext body:'This is the build status of ${env.$BUILD_NAME} >> ${env.$BUILD_STATUS}'
-           subject: 'Build status of ${env.$BUILD_NAME}'
-           to: 'slimshadyy62@gmail.com'
+            emailext (
+                subject: 'Build Info ${env.PROJECT_NAME}',
+                body: 'The build status of ${env.PROJECT_NAME} is ${env.BUILD_STATUS}',
+                to: 'slimshadyy62@gmail.com'
+            )
         }
     }
 }
