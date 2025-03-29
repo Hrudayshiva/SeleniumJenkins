@@ -23,8 +23,8 @@ pipeline {
     post {
         always {
             emailext (
-                subject: 'Build Info ${env.PROJECT_NAME}',
-                body: 'The build status of ${env.PROJECT_NAME} is ${env.BUILD_STATUS}',
+                subject: 'Build Info',
+                body: '',
                 to: 'slimshadyy62@gmail.com'
             )
         }
