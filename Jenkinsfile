@@ -22,8 +22,8 @@ pipeline {
 
     post {
         always {
-           emailext body:'This is the build status of ${env.$BUILD_NAME} >> ${env.$BUILD_STATUS}'
-           subject: 'Build status of ${env.$BUILD_NAME}'
+           emailext body:'This is the build status of ${env.$BUILD_NAME} >> ${env.$BUILD_STATUS}',
+           subject: 'Build status of ${env.$BUILD_NAME}',
            to: 'slimshadyy62@gmail.com'
         }
     }
