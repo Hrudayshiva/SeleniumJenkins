@@ -37,10 +37,11 @@ public class BasicClass {
     public static ChromeOptions chromeOptions;
     public static FirefoxOptions firefoxOptions;
     public static EdgeOptions edgeOptions;
+    private static String url = "https://www.automationtesting.co.uk/index.html";
 
     @BeforeMethod
-    @Parameters({"browser", "url1"})
-    public void beforeTest(String browser, String url) {
+    @Parameters({"browser"})
+    public void beforeTest(String browser) {
         switch (browser) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();

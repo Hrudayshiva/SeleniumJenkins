@@ -1,16 +1,20 @@
 pipeline {
     agent any
 
+    tools {
+        maven "Maven"
+    }
+
     stages {
         stage("Clean target folder") {
             steps {
-                bat "C://ProgramData//chocolatey//lib//maven//apache-maven-3.9.9//bin//mvn clean"
+                bat "mvn clean"
             }
         }
 
         stage("Run tests") {
             steps {
-                bat "C://ProgramData//chocolatey//lib//maven//apache-maven-3.9.9//bin//mvn test -Dbrowser=chrome"
+                bat "mvn test -Dbrowser=chrome"
             }
         }
     }
