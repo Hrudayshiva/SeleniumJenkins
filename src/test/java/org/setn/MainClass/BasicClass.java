@@ -40,7 +40,7 @@ public class BasicClass {
 
     @BeforeMethod
     @Parameters({"browser", "url1"})
-    public void beforeTest(String browser, @Optional("https://www.google.co.in/") String url) {
+    public void beforeTest(String browser, String url) {
         switch (browser) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();

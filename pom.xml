@@ -76,6 +76,10 @@
                         <browser>
                             ${browser}
                         </browser>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <url>
+                            ${url1}
+                        </url>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
